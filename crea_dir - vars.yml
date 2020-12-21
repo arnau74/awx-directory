@@ -1,0 +1,10 @@
+- name: Creates a Directory
+  hosts: all
+  tasks:
+  - name: Creates directory
+    file:
+      path: "/data/{{path}}"
+      state: directory
+      owner: "{{user}}"
+      group: "{{group}}"
+      mode: 0775
