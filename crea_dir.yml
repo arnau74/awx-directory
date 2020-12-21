@@ -1,7 +1,10 @@
-- name: Creates directory
-  file:
-    path: /src/www
-    state: directory
-    owner: www-data
-    group: www-data
-    mode: 0775
+- name: Creates a Directory
+  hosts: all
+  tasks:
+  - name: Creates directory
+    file:
+      path: /src/www
+      state: directory
+      owner: www-data
+      group: www-data
+      mode: 0775
