@@ -1,11 +1,7 @@
-- name: create dirs
+- name: Creates directory
   file:
-    path: "{{ item|safe|trim }}"
+    path: /src/www
     state: directory
-    owner: "{{ var_user }}"
-    group: "{{ var_group }}"
-    mode: 0777
-    recurse: yes
-  with_items: "{{ var_list_dirs }}"
-  tags:
-    - create-dir
+    owner: www-data
+    group: www-data
+    mode: 0775
